@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<title>CSS outline property - outline: none and outline: 0</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="La propriété outline CSS est une exigence d'accessibilité, mais souvent mal utilisé par de nombreux concepteurs de sites Web, pourquoi font-ils cela?" />
+<style type="text/css">
+body { background: #FDF5E6; color: #111111; font-family: "Century Gothic", "Apple Gothic", sans-serif; font-size: 90%; }
+h1 { font-size: 3.0em; color: #666666; text-align: left; padding: 0.2em 0; margin: 0; text-shadow: 0 0 42px #FFFFFF; }
+h2 { font-size: 7.0em; color: #B22222; text-align: left; padding: 0.1em 0; text-transform: uppercase; margin: 0; text-shadow: 0 0 42px #FFFFFF; }
+h3 { font-size: 1.5em; color: #333333; }
+p,ul { line-height: 1.5em; }
+#angrywrap { width: 740px; margin: 0 auto 100px auto; }
+a:focus { outline: thin dotted #666666; }
+#test1 a:focus { background: #FFFF00; }
+#test2 a:focus { color: #FF6600; }
+#test3 a:focus { outline: #FF0000 dotted medium; }
+#test4 a:focus { color: #FFFFFF; background: #FF0000; }
+</style>
+</head>
+
+<body>
+<div id="angrywrap">
+<h1>a { outline: none; }</h1>
+
+<h2>Ne fais pas ça!</h2>
+
+<h3>Que fait la propriété outline?</h3>
+<p>Elle fournit un retour visuel des liens sur le "focus" lorsque vous naviguez dans un document Web en utilisant la touche TAB (ou équivalent). Ceci est particulièrement utile pour les gens qui ne peuvent pas utiliser une souris ou ayant une déficience visuelle. Si vous supprimez le contour vous rendez votre site inaccessible pour ces personnes.</p>
+
+<p>Définir le focus sur les éléments de navigation est une exigence d'accessibilité, il est clairement indiqué dans le <a href="http://www.w3.org/Translations/WCAG20-fr/#navigation-mechanisms-focus-visible">Web Content Accessibility Guidelines</a>:</p>
+<blockquote>2.4.7 Visibilité du focus : toute interface utilisable au clavier comporte un mode de fonctionnement où le focus est visible. (Niveau AA) </blockquote>
+
+<h3>Pourquoi certains concepteurs de sites Web le supprime?</h3>
+<p>Habituellement, "l'intention de vanité" ou l'ignorance totale de l'accessibilité.</p>
+
+<p>Beaucoup d'intégrateur utilisent CSS resets qui inclut un style qui supprime le contour. L'un d'eux bien connu est Eric Meyers <a href="http://meyerweb.com/eric/tools/css/reset/index.html">CSS Reset</a>, mais Eric est <em>parfaitement clair</em>, les utilisateurs doivent <em>redéfinir le style du focus</em>.</p>
+
+<blockquote><code>/* remember to define focus styles! */<br />
+:focus {<br />
+	outline: 0;<br />
+}</code>
+</blockquote>
+
+<p>Remarquez le commentaire qui dit "n'oubliez pas de définir les styles du focus!" - L'ignorance n'est pas une excuse.</p>
+
+<h3>Si vous <em>devez</em> le supprimer, définiser un style alternatif</h3>
+<p>Il n'y a pas vraiment de raison de supprimer le contour, mais si votre vie en dépend, il y a un certain nombre de méthodes alternatives de style sur les liens du focus, utilisez votre touche TAB pour voir les ancres de test en action:</p>
+
+<ul>
+    <li>Donnez-lui une couleur de fond - <span id="test1"><a href="#test1">test de changement sur couleur d'arrière-plan</a></span></li>
+    <li>Changer la couleur du texte (ne pas oublier de faire un contraste élevé sur la couleur pour les personnes non voyante!) - <span id="test2"><a href="#test2">test de changement de couleur sur le texte</a></span></li>
+    <li>Fournir un contour personnalisée - <span id="test3"><a href="#test3">test de changement contour sur le texte</a></span></li>
+    <li>Focus à haute visibilité - <span id="test4"><a href="#test4">test haute visibilité</a></span></li>
+</ul>
+
+<h3>Pour en savoir plus</h3>
+<ul>
+<li><a href="http://www.456bereastreet.com/archive/200905/do_not_remove_the_outline_from_links_and_form_controls/">http://www.456bereastreet.com/archive/200905/do_not_remove_the_outline_from_links_and_form_controls/</a></li>
+<li><a href="http://webaim.org/blog/plague-of-outline-0/">http://webaim.org/blog/plague-of-outline-0/</a></li>
+<li><a href="http://www.w3.org/Translations/WCAG20-fr/#navigation-mechanisms-focus-visible">Web Content Accessibility Guidelines (WCAG) 2.0 (2.4.7)</a></li>
+<li><a href="http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/F78">Échec du critère de succès 2.4.7 en raison de contours de style et les frontières d'une manière qui retire ou rend non visible l'indicateur de focus visuel</a></li>
+</ul>
+
+<p>Avez-vous écrit à propos de ce problème? Faites-nous le savoir et nous envisagerons d'ajouter votre article/billet - contours + outlinenone.com</p>
+<p>Si vous vous souciez de l'accessibilité votre aide est la bienvenue en passant le mot et le lien vers http://www.outlinenone.com/</p>
+<p>Merci à Roger Johansson de <a href="http://www.456bereastreet.com/">456 Berea Street</a> qui a été l'inspiration pour ce site.</p>
+</div>
+
+
+</body>
+
+</html>
+
