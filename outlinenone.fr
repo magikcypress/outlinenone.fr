@@ -68,8 +68,9 @@ a:focus { outline: thin dotted #666666; }
 <p>Avez-vous écrit à propos de ce problème? Faites-nous le savoir et nous envisagerons d'ajouter votre article/billet - contours + outlinenone.com</p>
 <p>Si vous vous souciez de l'accessibilité votre aide est la bienvenue en passant le mot et le lien vers http://www.outlinenone.com/</p>
 <p>Merci à Roger Johansson de <a href="http://www.456bereastreet.com/">456 Berea Street</a> qui a été l'inspiration pour ce site.</p>
-</div>
 
+<p><em>Ce document est une traduction du document que vous pouvez consulter sur le site <a href="http://www.outlinenone.com" title="http://www.outlinenone.com" >outlinenone.com</a></em></p>
+</div>
 
 </body>
 
