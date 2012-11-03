@@ -29,12 +29,12 @@ a:focus { outline: thin dotted #666666; }
 <h2>Ne fais pas ça!</h2>
 
 <h3>Que fait la propriété outline?</h3>
-<p>Elle fournit  de la visibilité sur le "focus" lorsque vous naviguez dans un document Web en utilisant la touche TAB (ou un équivalent). Ceci est particulièrement utile pour les gens qui ne peuvent pas utiliser une souris ou ayant une déficience visuelle. Si vous supprimez le contour vous rendez votre site inaccessible pour ces personnes.</p>
+<p>Elle fournit de la visibilité sur le "focus" lorsque vous naviguez dans un document Web en utilisant la touche TAB (ou un équivalent). Ceci est particulièrement utile pour les gens qui ne peuvent pas utiliser une souris ou ayant une déficience visuelle. Si vous supprimez le contour vous rendez votre site inaccessible pour ces personnes.</p>
 
 <p>Définir le focus sur les éléments de navigation est une exigence d'accessibilité, il est clairement indiqué dans le <a href="http://www.w3.org/Translations/WCAG20-fr/#navigation-mechanisms-focus-visible">Web Content Accessibility Guidelines</a>:</p>
 <blockquote>2.4.7 Visibilité du focus : toute interface utilisable au clavier comporte un mode de fonctionnement où le focus est visible. (Niveau AA) </blockquote>
 
-<h3>Pourquoi certains concepteurs de sites web designers le supprime?</h3>
+<h3>Pourquoi certains web designers le supprime?</h3>
 <p>Habituellement, "l'intention de vanité" ou l'ignorance totale de l'accessibilité.</p>
 
 <p>Beaucoup d'intégrateur utilisent CSS resets qui inclut un style qui supprime le contour. L'un d'eux bien connu est Eric Meyers <a href="http://meyerweb.com/eric/tools/css/reset/index.html">CSS Reset</a>, mais Eric est <em>parfaitement clair</em>, les utilisateurs doivent <em>redéfinir le style du focus</em>.</p>
