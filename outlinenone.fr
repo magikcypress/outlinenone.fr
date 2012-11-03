@@ -6,7 +6,7 @@
 <head>
 <title>CSS outline property - outline: none and outline: 0</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<meta name="description" content="La propriété outline CSS est une exigence d'accessibilité, mais souvent mal utilisé par de nombreux concepteurs de sites Web, pourquoi font-ils cela?" />
+<meta name="description" content="La propriété outline CSS est une exigence d'accessibilité, mais souvent mal utilisée par de nombreux concepteurs de sites Web. Pourquoi font-ils cela?" />
 <style type="text/css">
 body { background: #FDF5E6; color: #111111; font-family: "Century Gothic", "Apple Gothic", sans-serif; font-size: 90%; }
 h1 { font-size: 3.0em; color: #666666; text-align: left; padding: 0.2em 0; margin: 0; text-shadow: 0 0 42px #FFFFFF; }
@@ -29,15 +29,15 @@ a:focus { outline: thin dotted #666666; }
 <h2>Ne fais pas ça!</h2>
 
 <h3>Que fait la propriété outline?</h3>
-<p>Elle fournit de la visibilité sur le "focus" lorsque vous naviguez dans un document Web en utilisant la touche TAB (ou un équivalent). Ceci est particulièrement utile pour les gens qui ne peuvent pas utiliser une souris ou ayant une déficience visuelle. Si vous supprimez le contour vous rendez votre site inaccessible pour ces personnes.</p>
+<p>Elle permet d'identifier le lien ayant le "focus" quand on navigue dans un document Web en utilisant la touche TAB (ou un équivalent). Ceci est particulièrement utile pour les gens qui ne peuvent pas utiliser une souris ou ayant une déficience visuelle. Si vous supprimez le contour vous rendez votre site inaccessible pour ces personnes.</p>
 
-<p>Définir le focus sur les éléments de navigation est une exigence d'accessibilité, il est clairement indiqué dans le <a href="http://www.w3.org/Translations/WCAG20-fr/#navigation-mechanisms-focus-visible">Web Content Accessibility Guidelines</a>:</p>
+<p>Définir le focus sur les éléments de navigation est une exigence d'accessibilité, c'est clairement indiqué dans les <a href="http://www.w3.org/Translations/WCAG20-fr/#navigation-mechanisms-focus-visible">Règles pour l'accessibilité des contenus Web (<abbr lang="en" title="Web Content Accessibility Guidelines">WCAG</abbr>)</a>&nbsp;:</p>
 <blockquote>2.4.7 Visibilité du focus : toute interface utilisable au clavier comporte un mode de fonctionnement où le focus est visible. (Niveau AA) </blockquote>
 
-<h3>Pourquoi certains web designers le supprime?</h3>
-<p>Habituellement, "l'intention de vanité" ou l'ignorance totale de l'accessibilité.</p>
+<h3>Pourquoi certains web designers le supprime&nbsp;?</h3>
+<p>Souvent par refus que leur design soit "pollué" par le style par défaut, ou par ignorance totale de l'accessibilité.</p>
 
-<p>Beaucoup d'intégrateur utilisent CSS resets qui inclut un style qui supprime le contour. L'un d'eux bien connu est Eric Meyers <a href="http://meyerweb.com/eric/tools/css/reset/index.html">CSS Reset</a>, mais Eric est <em>parfaitement clair</em>, les utilisateurs doivent <em>redéfinir le style du focus</em>.</p>
+<p>Beaucoup d'intégrateurs utilisent un <span lang="en">reset</span <abbr>CSS</abbr> qui désactive le contour. Parmi ceux-là se trouve <a href="http://meyerweb.com/eric/tools/css/reset/index.html" hreflang="en" lang="en" title="Eric Meyer CSS reset">celui d'Eric Meyer</a>, mais Eric est <em>parfaitement clair</em>&nbsp;: ceux qui l'utilisent <em>doivent redéfinir le style du focus</em>.</p>
 
 <blockquote><code>/* remember to define focus styles! */<br />
 :focus {<br />
@@ -45,33 +45,31 @@ a:focus { outline: thin dotted #666666; }
 }</code>
 </blockquote>
 
-<p>Remarquez le commentaire qui dit "n'oubliez pas de définir les styles du focus!" - L'ignorance n'est pas une excuse.</p>
+<p>Notez le commentaire qui dit explicitement <q>n'oubliez pas de définir les styles du focus&nbsp;!</q> - L'ignorance n'est pas une excuse.</p>
 
-<h3>Si vous <em>devez</em> le supprimer, définiser un style alternatif</h3>
-<p>Il n'y a pas vraiment de raison de supprimer le contour, mais si votre vie en dépend, il y a un certain nombre de méthodes alternatives de style sur les liens du focus, utilisez votre touche TAB pour voir les ancres de test en action:</p>
+<h3>Si vous <em>devez</em> le supprimer, définissez un style alternatif</h3>
+<p>Il n'y a pas vraiment de raison de supprimer le contour, mais si votre vie en dépend, vous pouvez utiliser l'une des méthodes suivantes pour styler les liens ayant le focus. Utilisez la touche TAB pour voir ce que ça donne sur les liens suivants&nbsp;:</p>
 
 <ul>
-    <li>Donnez-lui une couleur de fond - <span id="test1"><a href="#test1">test de changement sur couleur d'arrière-plan</a></span></li>
-    <li>Changer la couleur du texte (ne pas oublier de faire un contraste élevé sur la couleur pour les personnes non voyante!) - <span id="test2"><a href="#test2">test de changement de couleur sur le texte</a></span></li>
-    <li>Fournir un contour personnalisée - <span id="test3"><a href="#test3">test de changement contour sur le texte</a></span></li>
-    <li>Contour à haute visibilité - <span id="test4"><a href="#test4">test haute visibilité</a></span></li>
+    <li>Changez la couleur de fond - <span id="test1"><a href="#test1">test de changement sur couleur d'arrière-plan</a></span></li>
+    <li>Changer la couleur du texte (choisissez des couleurs contrastées pour les daltoniens&nbsp;!) - <span id="test2"><a href="#test2">test de changement de couleur sur le texte</a></span></li>
+    <li>Personnaliser le contour - <span id="test3"><a href="#test3">test de changement du contour</a></span></li>
+    <li>Augmentez le contraste à fond - <span id="test4"><a href="#test4">test haute visibilité</a></span></li>
 </ul>
 
 <h3>Pour en savoir plus</h3>
 <ul>
-<li><a href="http://www.456bereastreet.com/archive/200905/do_not_remove_the_outline_from_links_and_form_controls/">http://www.456bereastreet.com/archive/200905/do_not_remove_the_outline_from_links_and_form_controls/</a></li>
-<li><a href="http://webaim.org/blog/plague-of-outline-0/">http://webaim.org/blog/plague-of-outline-0/</a></li>
-<li><a href="http://www.w3.org/Translations/WCAG20-fr/#navigation-mechanisms-focus-visible">Web Content Accessibility Guidelines (WCAG) 2.0 (2.4.7)</a></li>
-<li><a href="http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/F78">Échec du critère de succès 2.4.7 en raison de contours de style et les frontières d'une manière qui retire ou rend non visible l'indicateur de focus visuel</a></li>
+<li><a href="http://www.456bereastreet.com/archive/200905/do_not_remove_the_outline_from_links_and_form_controls/" hreflang="en">Ne retirez pas le contour des liens et éléments de formulaire</a></li>
+<li><a href="http://webaim.org/blog/plague-of-outline-0/" hreflang="en">WebAIM - La peste soit d'outline: 0</a></li>
+<li><a href="http://www.w3.org/Translations/WCAG20-fr/#navigation-mechanisms-focus-visible">Règles pour l'accessibilité des contenus Web (<abbr lang="en" title="Web Content Accessibility Guidelines">WCAG</abbr>) 2.0 (2.4.7)</a></li>
+<li><a href="http://www.w3.org/TR/2008/NOTE-WCAG20-TECHS-20081211/F78">Non-validation du critère de succès 2.4.7 en raison de styles supprimant l'indicateur de focus visuel</a></li>
 </ul>
 
-<p>Avez-vous écrit à propos de ce problème? Faites-nous le savoir et nous envisagerons d'ajouter votre article/billet - contours + outlinenone.com</p>
+<p>Avez-vous écrit à propos de ce problème&nbsp;? Faites-le le savoir et nous envisagerons d'ajouter votre article/billet - contours + outlinenone.com</p>
 <p>Si vous vous souciez de l'accessibilité votre aide est la bienvenue en passant le mot et le lien vers http://www.outlinenone.com/</p>
-<p>Merci à Roger Johansson de <a href="http://www.456bereastreet.com/">456 Berea Street</a> qui a été l'inspiration pour ce site.</p>
+<p>Merci à Roger Johansson de <a href="http://www.456bereastreet.com/" hreflang="en" lang="en">456 Berea Street</a> qui m'a inspiré pour monter ce site.</p>
 
-<p><em>Vous pouvez consulter la traduction de ce document sur le site <a href="http://www.outlinenone.com" title="http://www.outlinenone.com">outlinenone.com</a></em>de <AUTEUR> sous licence <LICENCE></em></p>
+<p>Ce document est une traduction du site <a href="http://www.outlinenone.com" hreflang="en" lang="en">outlinenone.com</a> de $auteur sous licence $licence.</p>
 </div>
-
 </body>
-
 </html>
